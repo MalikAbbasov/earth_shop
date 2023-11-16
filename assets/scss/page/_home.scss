@@ -1,0 +1,383 @@
+main {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+// responsivlik
+@media only screen and (max-width: 1250px) {
+  main {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    #card_search {
+      width: 100vw;
+      min-height: 60vh;
+      .searching {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        input {
+          width: 80%;
+          height: 50px;
+        }
+      }
+      .filter {
+        width: 100%;
+        min-height: 100px;
+        h3 {
+          font-size: 30px;
+        }
+        .range {
+          &-price {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+      .categories {
+        width: 100%;
+        min-height: 100px;
+        padding: 15px;
+        margin-bottom: 10px;
+      }
+    }
+    #posters {
+      border: 0px;
+      .sorting {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        padding: 10px;
+        select {
+          margin-top: 10px;
+          border: 1px solid #74a84a;
+        }
+      }
+      .a{
+        
+    border: 1px solid black;
+      }
+    }
+  }
+}
+#card_search {
+  width: 20vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  .searching {
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+    padding: 10px;
+    input {
+      width: 60%;
+      height: 50px;
+      font-size: 15px;
+    }
+    button {
+      width: 50px;
+      height: 50px;
+      border-radius: 5px;
+      font-size: 15px;
+      background-color: #74a84a;
+      color: white;
+      cursor: pointer;
+    }
+  }
+  .filter {
+    width: 100%;
+    min-height: 100px;
+    margin-top: 20px;
+    h3 {
+      font-size: 24px;
+      padding: 10px;
+    }
+    .range {
+      width: 100%;
+      min-height: 150px;
+      padding: 10px;
+      .range-slider {
+        margin-top: 20px;
+        width: 100%;
+        height: 5px;
+        position: relative;
+        background-color: #74a84a;
+        border-radius: 2px;
+      }
+      .range-selected {
+        height: 100%;
+        left: 30%;
+        right: 30%;
+        position: absolute;
+        border-radius: 5px;
+        background-color: #585858;
+      }
+      .range-input {
+        position: relative;
+      }
+      .range-input input {
+        position: absolute;
+        width: 200px;
+        height: 5px;
+        top: -7px;
+        background: none;
+        pointer-events: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+      }
+      .range-input input::-webkit-slider-thumb {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        border: 3px solid #2c541d;
+        background-color: #fff;
+        pointer-events: auto;
+        -webkit-appearance: none;
+      }
+      .range-input input::-moz-range-thumb {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        border: 3px solid #2c541d;
+        background-color: #fff;
+        pointer-events: auto;
+        -moz-appearance: none;
+      }
+      .range-price {
+        margin: 30px 0;
+        width: 100%;
+        font-size: 20px;
+        .min_max {
+          width: 100px;
+          height: 50px;
+          border-radius: 5px;
+          font-size: 19px;
+        }
+        label {
+          margin-right: 5px;
+        }
+        input {
+          max-width: 60px;
+          padding: 5px;
+        }
+        input:first-of-type {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  .categories {
+    width: 100%;
+    height: 120px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    &_head {
+      width: 100%;
+      height: 40%;
+      font-size: 20px;
+    }
+    &_section {
+      width: 100%;
+      height: 60%;
+      padding: 10px;
+      font-size: 22px;
+      font-weight: 500;
+      span {
+        color: #74a84a;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+#posters {
+  margin-left: 20px;
+  max-width: 60vw;
+  min-height: 100vh;
+  padding: 20px;
+  border-left: 1px solid #585858;
+  .posters_header {
+    max-width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    p {
+      font-size: 20px;
+      color: #585858;
+      span {
+        cursor: pointer;
+      }
+    }
+    h2 {
+      font-size: 55px;
+      color: #74a84a;
+      font-weight: 800;
+    }
+  }
+  .sorting {
+    max-width: 100%;
+    min-height: 100px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    h5 {
+      font-size: 22px;
+      color: #585858;
+    }
+    select {
+      max-width: 200px;
+      height: 44px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      border: transparent;
+      padding: 13px, 30px, 113px, 13px;
+    }
+  }
+
+  @mixin card {
+    max-width: 300px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    &_image {
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      width: 100%;
+      height: 70%;
+      position: relative;
+      transition: 400ms;
+      &:hover {
+        cursor: pointer;
+        i {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      i {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        border-radius: 50%;
+        background-color: white;
+        color: #2c541d;
+        display: none;
+        transition: 300ms;
+        opacity: 0.6;
+        .hover_text {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          width: 75px;
+          height: 30px;
+          background-color: #2c541d;
+          font-size: 13px;
+          font-family: sans-serif;
+          top: 0px;
+          right: 50px;
+          border-radius: 5px;
+          color: #fff;
+
+        }
+        &:hover {
+          opacity: 1;
+          .hover_text{
+            opacity: 1;
+            &:hover{
+              opacity: 0;
+            }
+          }
+        }
+      }
+
+
+    }
+    .posters {
+      width: 100%;
+      height: 15%;
+      display: flex;
+      align-items: center;
+    }
+    &_text {
+      width: 100%;
+      height: 30%;
+      h4 {
+        font-size: 22px;
+        font-weight: 400;
+        margin-bottom: 15px;
+        display: inline-block;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      p {
+        font-size: 20px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .cards {
+    max-width: 60vw;
+    min-height: 50vh;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    justify-content: space-evenly;
+    &_poster1 {
+      @include card;
+    }
+    &_poster2 {
+      @include card;
+    }
+    &_poster3 {
+      @include card;
+    }
+  }
+}
+
+//main-de cardlar ucun responsivlik
+@media only screen and (max-width: 1200px) {
+  #posters {
+    .cards {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #posters {
+    .cards {
+      display: grid;
+      grid-template-columns: auto;
+    }
+  }
+}
